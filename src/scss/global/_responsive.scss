@@ -1,0 +1,1313 @@
+/* ============================================================================
+   RESPONSIVIDADE GLOBAL - ADAPTAÇÃO PARA TODOS OS MONITORES
+   Mantém todos os estilos visuais, apenas ajusta tamanhos e layouts
+   ============================================================================ */
+
+/* === BREAKPOINT: Telas muito grandes (4K, ultrawide) >= 2000px === */
+@media screen and (min-width: 2000px) {
+  .pta {
+    font-size: 18px;
+  }
+  
+  .pta-id-card .trainer-photo-container {
+    width: 560px;
+    height: 360px;
+  }
+  
+  .pta-id-card .trainer-photo {
+    width: 560px;
+    height: 360px;
+  }
+  
+  .pta-id-card .pta-id-name {
+    font-size: 2rem;
+  }
+  
+  .pta-skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+  }
+  
+  .pta-skills-grid .pta-skill {
+    padding: 0.8rem 1rem !important;
+  }
+  
+  .pta-skills-grid .skill-name {
+    font-size: 1.1rem;
+  }
+  
+  .pta .window-content {
+    padding: 1.5rem;
+  }
+}
+
+/* === BREAKPOINT: Telas grandes (1440px - 1999px) === */
+@media screen and (min-width: 1440px) and (max-width: 1999px) {
+  .pta {
+    font-size: 15px;
+  }
+  
+  .pta-id-card .trainer-photo-container {
+    width: 480px;
+    height: 310px;
+  }
+  
+  .pta-id-card .trainer-photo {
+    width: 480px;
+    height: 310px;
+  }
+}
+
+/* === BREAKPOINT: Telas médias-grandes (1200px - 1439px) === */
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+  .pta {
+    font-size: 14px;
+  }
+  
+  .pta-id-card .trainer-photo-container {
+    width: 380px;
+    height: 245px;
+  }
+  
+  .pta-id-card .trainer-photo {
+    width: 380px;
+    height: 245px;
+  }
+  
+  .pta-id-card .card-main {
+    gap: 0.75rem;
+    padding: 0.6rem;
+  }
+}
+
+/* === BREAKPOINT: Telas médias (992px - 1199px) === */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .pta {
+    font-size: 13px;
+  }
+  
+  .pta-id-card .trainer-photo-container {
+    width: 320px;
+    height: 200px;
+  }
+  
+  .pta-id-card .trainer-photo {
+    width: 320px;
+    height: 200px;
+  }
+  
+  .pta-id-card .pta-id-name {
+    font-size: 1.3rem;
+  }
+  
+  .pta-id-card .card-main {
+    gap: 0.6rem;
+    padding: 0.5rem;
+  }
+  
+  .pta-skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-item {
+    width: 70px;
+    min-width: 70px;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-item img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* === BREAKPOINT: Telas pequenas-médias (768px - 991px) === */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .pta {
+    font-size: 12px;
+  }
+  
+  /* Trainer Card - Layout em coluna para caber melhor */
+  .pta-id-card .card-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+  
+  .pta-id-card .trainer-photo-section {
+    width: 100%;
+    align-items: center;
+  }
+  
+  .pta-id-card .trainer-photo-container {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    aspect-ratio: 14/9;
+  }
+  
+  .pta-id-card .trainer-photo {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    aspect-ratio: 14/9;
+  }
+  
+  .pta-id-card .trainer-photo-name {
+    max-width: 100%;
+  }
+  
+  .pta-id-card .card-info {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .pta-id-card .pta-id-name {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  
+  .pta-id-card .card-meta {
+    justify-content: center;
+  }
+  
+  .pta-card-classes {
+    width: 100%;
+  }
+  
+  .pta-id-card .class-panel {
+    width: 100%;
+  }
+  
+  .pta-id-card .class-panel > .flexcol {
+    justify-content: center;
+  }
+  
+  /* Skills Grid */
+  .pta-skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+    padding: 0.75rem !important;
+    gap: 0.5rem !important;
+  }
+  
+  .pta-skills-grid .pta-skill {
+    padding: 0.5rem 0.6rem !important;
+  }
+  
+  .pta-skills-grid .skill-score {
+    padding: 4px 6px;
+    font-size: 0.8rem;
+    min-width: 35px;
+  }
+  
+  .pta-skills-grid .skill-name {
+    font-size: 0.85rem;
+  }
+  
+  /* Pokemon Strip */
+  .pta-trainer-pokemon-strip {
+    padding: 0.75rem;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-list {
+    justify-content: center;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-item {
+    width: 65px;
+    min-width: 65px;
+    padding: 0.4rem;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-item img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-name {
+    font-size: 0.7rem;
+  }
+  
+  /* Stats */
+  .pta-stats .pta-score {
+    flex: 0 0 40px;
+    height: 40px;
+    width: 40px;
+  }
+  
+  /* Tabs */
+  .pta .sheet-tabs {
+    justify-content: center;
+    gap: 0.35rem;
+  }
+  
+  .pta .sheet-tabs .item {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.7rem;
+  }
+  
+  /* Form Groups */
+  .pta .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+  
+  .pta .form-group label {
+    flex: 0 0 auto;
+  }
+  
+  /* Grid responsivo */
+  .pta .grid, .pta .grid-2col {
+    grid-template-columns: 1fr !important;
+    gap: 8px;
+  }
+  
+  .pta .grid-3col, .pta .grid-4col {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  /* Flexrow/Flexcol */
+  .pta-tab .flexrow > .flexcol {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+  
+  /* Items List */
+  ol.items-list .item-name {
+    font-size: 0.85rem;
+  }
+  
+  ol.items-list .item-controls a {
+    margin-left: 4px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* Progress Bar */
+  .progress-bar {
+    height: 22px;
+  }
+  
+  .progress-bar label {
+    font-size: 0.7rem;
+    padding: 0 0.5em;
+  }
+  
+  /* Pokemon Team */
+  ol.pta-pokemon-team .pta-pokemon {
+    padding: 0.75rem;
+    gap: 0.75rem;
+    min-height: 75px;
+  }
+  
+  ol.pta-pokemon-team .pta-pokemon .portrait {
+    flex: 0 0 60px;
+    width: 60px;
+    height: 60px;
+  }
+  
+  ol.pta-pokemon-team .pta-pokemon .nickname {
+    font-size: 1rem;
+  }
+  
+  /* Type Tags */
+  .type-tag {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+  }
+  
+  /* Tab Content */
+  .pta-tab-content {
+    padding: 1rem;
+  }
+  
+  /* Color Presets */
+  .color-preset {
+    width: 12px;
+    height: 12px;
+  }
+  
+  /* Color Picker */
+  .pta-id-card .trainer-card-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.5rem;
+  }
+}
+
+/* === BREAKPOINT: Telas pequenas (576px - 767px) === */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .pta {
+    font-size: 11px;
+  }
+  
+  /* Window */
+  .pta .window-content {
+    padding: 0.75rem;
+  }
+  
+  /* Trainer Card */
+  .pta-id-card {
+    border-radius: 12px;
+    border-width: 2px;
+  }
+  
+  .pta-id-card .card-badge {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.55rem;
+  }
+  
+  .pta-id-card .card-brand {
+    font-size: 0.75rem;
+  }
+  
+  .pta-id-card .card-brand::before {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .pta-id-card .card-code {
+    font-size: 0.5rem;
+    padding: 0.15rem 0.4rem;
+  }
+  
+  .pta-id-card .card-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem;
+  }
+  
+  .pta-id-card .trainer-photo-section {
+    width: 100%;
+  }
+  
+  .pta-id-card .trainer-photo-container {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    aspect-ratio: 14/9;
+  }
+  
+  .pta-id-card .trainer-photo {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    aspect-ratio: 14/9;
+  }
+  
+  .pta-id-card .trainer-photo-name {
+    font-size: 0.75rem;
+    max-width: 100%;
+  }
+  
+  .pta-id-card .card-info {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .pta-id-card .pta-id-name {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  .pta-id-card .card-meta {
+    justify-content: center;
+    gap: 0.3rem;
+  }
+  
+  .pta-id-card .card-meta > * {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .pta-id-card .class-panel {
+    padding: 0.4rem;
+  }
+  
+  .pta-id-card .class-label {
+    font-size: 0.6rem;
+  }
+  
+  .pta-id-card .class-row {
+    flex: 1 1 100%;
+  }
+  
+  .pta-id-card .class-row input {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+    height: 1.5rem;
+  }
+  
+  /* Color Controls */
+  .pta-id-card .trainer-card-controls {
+    padding: 0.3rem 0.4rem;
+    gap: 0.3rem;
+    justify-content: center;
+  }
+  
+  .pta-id-card .trainer-card-controls.compact .color-hint {
+    font-size: 0.5rem;
+    display: none;
+  }
+  
+  .color-presets {
+    gap: 0.2rem;
+  }
+  
+  .color-preset {
+    width: 11px;
+    height: 11px;
+  }
+  
+  /* Skills Grid */
+  .pta-skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) !important;
+    padding: 0.5rem !important;
+    gap: 0.4rem !important;
+    max-height: 350px !important;
+  }
+  
+  .pta-skills-grid .pta-skill {
+    padding: 0.4rem 0.5rem !important;
+    gap: 0.4rem !important;
+    border-radius: 8px !important;
+  }
+  
+  .pta-skills-grid .skill-score {
+    padding: 3px 5px;
+    font-size: 0.75rem;
+    min-width: 32px;
+    border-width: 1px;
+  }
+  
+  .pta-skills-grid .skill-name {
+    font-size: 0.75rem;
+  }
+  
+  /* Stats */
+  .pta-stats .pta-stat-wrap {
+    flex-wrap: wrap;
+  }
+  
+  .pta-stats .pta-score {
+    flex: 0 0 35px;
+    height: 35px;
+    width: 35px;
+  }
+  
+  .pta-skill {
+    font-size: calc(var(--pta-scale-em) * 0.9);
+  }
+  
+  /* Pokemon Strip */
+  .pta-trainer-pokemon-strip {
+    padding: 0.6rem;
+    border-radius: 12px;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.3rem;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-title {
+    font-size: 0.95rem;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-note {
+    font-size: 0.75rem;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-list {
+    justify-content: center;
+    gap: 0.4rem;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-item {
+    width: 58px;
+    min-width: 58px;
+    padding: 0.35rem;
+    border-radius: 10px;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-name {
+    font-size: 0.65rem;
+  }
+  
+  /* Tabs */
+  .pta .sheet-tabs {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    padding: 0.4rem;
+  }
+  
+  .pta .sheet-tabs .item {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+  }
+  
+  /* Tab Content */
+  .pta-tab {
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+  
+  .pta-tab-content {
+    padding: 0.75rem;
+    border-radius: 1rem;
+  }
+  
+  /* Form Groups */
+  .pta .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .pta .form-group label {
+    font-size: 0.7rem;
+  }
+  
+  .pta input[type="text"],
+  .pta input[type="number"],
+  .pta textarea,
+  .pta select {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+    border-radius: 6px;
+  }
+  
+  /* Grid */
+  .pta .grid, .pta .grid-2col, .pta .grid-3col, .pta .grid-4col {
+    grid-template-columns: 1fr !important;
+    gap: 6px;
+  }
+  
+  .pta-tab .flexrow > .flexcol {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+  
+  /* Items List */
+  ol.items-list .items-header {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.5rem;
+  }
+  
+  ol.items-list .item {
+    padding: 0.5rem 0.4rem;
+  }
+  
+  ol.items-list .item-name {
+    font-size: 0.8rem;
+  }
+  
+  ol.items-list .item-name .item-image {
+    flex: 0 0 25px;
+    height: 25px;
+    background-size: 25px;
+    margin-right: 4px;
+  }
+  
+  ol.items-list .item-controls {
+    flex: 0 1 auto;
+  }
+  
+  ol.items-list .item-controls a {
+    margin-left: 3px !important;
+    font-size: 0.85rem !important;
+  }
+  
+  /* Progress Bar */
+  .progress-bar {
+    height: 20px;
+    border-radius: 6px;
+  }
+  
+  .progress-bar label {
+    font-size: 0.65rem;
+    padding: 0 0.4em;
+  }
+  
+  .progress-bar > .wrapper input {
+    font-size: 0.75rem;
+  }
+  
+  /* Pokemon Team */
+  ol.pta-pokemon-team .pta-pokemon {
+    padding: 0.6rem;
+    gap: 0.6rem;
+    min-height: 70px;
+    border-radius: 12px;
+  }
+  
+  ol.pta-pokemon-team .pta-pokemon .portrait {
+    flex: 0 0 55px;
+    width: 55px;
+    height: 55px;
+    border-radius: 8px;
+  }
+  
+  ol.pta-pokemon-team .pta-pokemon .nickname {
+    font-size: 0.95rem;
+  }
+  
+  /* Type Tags */
+  .type-tag {
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    border-radius: 5px;
+  }
+  
+  /* Collapsible */
+  .pta .collapsible label {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  /* Window Header */
+  .pta .window-header {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .pta .window-header .window-title {
+    font-size: 1rem;
+  }
+  
+  /* Passives Tab */
+  .passives-tab {
+    padding: 0.4rem;
+  }
+  
+  .passives-tab .passives-header h3 {
+    font-size: 1rem;
+  }
+}
+
+/* === BREAKPOINT: Telas muito pequenas (< 576px) === */
+@media screen and (max-width: 575px) {
+  .pta {
+    font-size: 10px;
+  }
+  
+  /* Window */
+  .pta .window {
+    border-radius: 10px;
+    border-width: 1px;
+  }
+  
+  .pta .window-content {
+    padding: 0.5rem;
+  }
+  
+  .pta .window-header {
+    padding: 0.4rem 0.6rem;
+  }
+  
+  .pta .window-header .window-title {
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+  }
+  
+  /* Trainer Card */
+  .pta-id-card {
+    border-radius: 10px;
+    border-width: 2px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .pta-id-card .card-badge {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.5rem;
+    gap: 0.3rem;
+  }
+  
+  .pta-id-card .card-brand {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    gap: 0.3rem;
+  }
+  
+  .pta-id-card .card-brand::before {
+    width: 8px;
+    height: 8px;
+    border-width: 1px;
+  }
+  
+  .pta-id-card .card-code {
+    font-size: 0.45rem;
+    padding: 0.1rem 0.3rem;
+  }
+  
+  .pta-id-card .card-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+  
+  .pta-id-card .trainer-photo-section {
+    width: 100%;
+    gap: 0.3rem;
+  }
+  
+  .pta-id-card .trainer-photo-container {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    aspect-ratio: 14/9;
+    border-width: 2px;
+  }
+  
+  .pta-id-card .trainer-photo {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    aspect-ratio: 14/9;
+  }
+  
+  .pta-id-card .trainer-photo-name {
+    font-size: 0.7rem;
+    max-width: 100%;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .pta-id-card .card-info {
+    width: 100%;
+    gap: 0.4rem;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .pta-id-card .pta-id-name {
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .pta-id-card .card-meta {
+    justify-content: center;
+    gap: 0.25rem;
+  }
+  
+  .pta-id-card .card-meta > * {
+    font-size: 0.55rem;
+    padding: 0.15rem 0.35rem;
+    border-radius: 4px;
+  }
+  
+  .pta-card-classes {
+    width: 100%;
+  }
+  
+  .pta-id-card .class-panel {
+    padding: 0.35rem;
+    border-radius: 6px;
+  }
+  
+  .pta-id-card .class-panel > .flexcol {
+    gap: 0.3rem;
+    justify-content: center;
+  }
+  
+  .pta-id-card .class-label {
+    font-size: 0.55rem;
+    margin-bottom: 0.2rem;
+  }
+  
+  .pta-id-card .class-row {
+    flex: 1 1 100%;
+    gap: 0.2rem;
+  }
+  
+  .pta-id-card .class-row input {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.3rem;
+    height: 1.4rem;
+    border-radius: 4px;
+  }
+  
+  .pta-id-card .class-row input[type="number"] {
+    width: 2rem;
+    min-width: 2rem;
+  }
+  
+  /* Color Controls */
+  .pta-id-card .trainer-card-controls {
+    padding: 0.25rem 0.35rem;
+    gap: 0.25rem;
+    justify-content: center;
+  }
+  
+  .pta-id-card .trainer-card-controls.compact .color-hint {
+    display: none;
+  }
+  
+  .pta-id-card .color-picker-button {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .color-presets {
+    gap: 0.15rem;
+  }
+  
+  .color-preset {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Skills Grid */
+  .pta-skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)) !important;
+    padding: 0.4rem !important;
+    gap: 0.35rem !important;
+    max-height: 300px !important;
+    border-radius: 12px;
+  }
+  
+  .pta-skills-grid .pta-skill {
+    padding: 0.35rem 0.4rem !important;
+    gap: 0.35rem !important;
+    border-radius: 6px !important;
+    border-width: 1px !important;
+  }
+  
+  .pta-skills-grid .skill-score {
+    padding: 2px 4px;
+    font-size: 0.7rem;
+    min-width: 28px;
+    border-width: 1px;
+    border-radius: 4px;
+  }
+  
+  .pta-skills-grid .skill-name {
+    font-size: 0.7rem;
+  }
+  
+  /* Stats */
+  .pta-stats {
+    gap: 0.3rem;
+  }
+  
+  .pta-stats > * {
+    margin-bottom: calc(var(--pta-scale-px) * 0.5);
+  }
+  
+  .pta-stats .pta-stat-wrap {
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+  
+  .pta-stats .pta-score-wrap {
+    margin-right: calc(var(--pta-scale-px) * 0.5);
+  }
+  
+  .pta-stats .pta-score {
+    flex: 0 0 32px;
+    height: 32px;
+    width: 32px;
+    border-width: 1px;
+  }
+  
+  .pta-skills-wrap {
+    margin-left: calc(var(--pta-scale-px) * 0.5);
+  }
+  
+  .pta-skill {
+    font-size: calc(var(--pta-scale-em) * 0.8);
+  }
+  
+  .pta-talent {
+    margin-right: calc(var(--pta-scale-em) * 0.5);
+  }
+  
+  .pta-mod {
+    flex: 0 0 1.5em;
+  }
+  
+  /* Pokemon Strip */
+  .pta-trainer-pokemon-strip {
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.2rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.35rem;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-title {
+    font-size: 0.85rem;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-note {
+    font-size: 0.7rem;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-list {
+    justify-content: center;
+    gap: 0.3rem;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-item {
+    width: 50px;
+    min-width: 50px;
+    padding: 0.25rem;
+    border-radius: 8px;
+    border-width: 1px;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-item img {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    margin-bottom: 0.25rem;
+    border-width: 1px;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-name {
+    font-size: 0.55rem;
+  }
+  
+  /* Tabs */
+  .pta .sheet-tabs {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    padding: 0.3rem;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .pta .sheet-tabs .item {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.55rem;
+    letter-spacing: 0.8px;
+    border-radius: 15px;
+    border-width: 1px;
+  }
+  
+  /* Tab */
+  .pta-tab {
+    padding: 0.4rem;
+    gap: 0.4rem;
+    border-radius: 1rem;
+    min-height: 200px;
+  }
+  
+  .pta .tab-content {
+    max-height: 50vh;
+  }
+  
+  /* Tab Content */
+  .pta-tab-content {
+    padding: 0.6rem;
+    border-radius: 0.85rem;
+    border-width: 1px;
+  }
+  
+  .pta-tab-content .wrapper {
+    padding: 0.3rem;
+  }
+  
+  /* Form Groups */
+  .pta .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .pta .form-group label {
+    font-size: 0.65rem;
+    flex: 0 0 auto;
+  }
+  
+  .pta input[type="text"],
+  .pta input[type="number"],
+  .pta textarea,
+  .pta select {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 5px;
+    border-width: 1px !important;
+  }
+  
+  /* Flexrow/Flexcol */
+  .pta .flexrow {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .pta .flexcol {
+    gap: 0.2rem;
+  }
+  
+  .pta-tab .flexrow > .flexcol {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+  
+  /* Grid */
+  .pta .grid, .pta .grid-2col, .pta .grid-3col, .pta .grid-4col, .pta .grid-5col, .pta .grid-6col {
+    grid-template-columns: 1fr !important;
+    gap: 4px;
+    margin: 6px 0;
+  }
+  
+  /* Items List */
+  ol.items-list .items-header {
+    font-size: 0.6rem;
+    padding: 0.35rem 0.4rem;
+    border-radius: 8px 8px 0 0;
+    letter-spacing: 1px;
+  }
+  
+  ol.items-list .item {
+    padding: 0.4rem 0.35rem;
+  }
+  
+  ol.items-list .item-name {
+    font-size: 0.75rem;
+  }
+  
+  ol.items-list .item-name h3,
+  ol.items-list .item-name h4 {
+    font-size: 0.75rem;
+  }
+  
+  ol.items-list .item-name .item-image {
+    flex: 0 0 22px;
+    height: 22px;
+    background-size: 22px;
+    margin-right: 3px;
+  }
+  
+  ol.items-list .item-controls {
+    flex: 0 1 auto;
+    margin: 0 0.2rem;
+  }
+  
+  ol.items-list .item-controls a {
+    margin-left: 2px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  ol.items-list .item:last-child {
+    border-radius: 0 0 8px 8px;
+  }
+  
+  .item-quantity .item-count {
+    min-width: 2em;
+    font-size: 0.7rem;
+  }
+  
+  .item-prop {
+    font-size: 0.65rem !important;
+  }
+  
+  /* Progress Bar */
+  .progress-bar {
+    height: 18px;
+    border-radius: 5px;
+    border-width: 1px;
+  }
+  
+  .progress-bar label {
+    font-size: 0.6rem;
+    padding: 0 0.3em;
+    border-right-width: 1px;
+  }
+  
+  .progress-bar > .wrapper input {
+    font-size: 0.7rem;
+  }
+  
+  /* Pokemon Team */
+  ol.pta-pokemon-team .pta-pokemon {
+    padding: 0.5rem;
+    gap: 0.5rem;
+    min-height: 60px;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    border-width: 1px;
+  }
+  
+  ol.pta-pokemon-team .pta-pokemon .portrait {
+    flex: 0 0 45px;
+    width: 45px;
+    height: 45px;
+    border-radius: 6px;
+    border-width: 2px;
+  }
+  
+  ol.pta-pokemon-team .pta-pokemon .nickname {
+    font-size: 0.85rem;
+  }
+  
+  ol.pta-pokemon-team .pta-pokemon .details > * {
+    flex: 0;
+  }
+  
+  /* Type Tags */
+  .type-tag {
+    font-size: 0.55rem;
+    padding: 1px 5px;
+    border-radius: 4px;
+    border-width: 1px;
+    letter-spacing: 1px;
+  }
+  
+  /* Collapsible */
+  .pta .collapsible {
+    border-radius: 8px;
+    margin: 0.3rem 0;
+    border-width: 1px;
+  }
+  
+  .pta .collapsible label {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.6rem;
+    letter-spacing: 0.1em;
+    gap: 0.3rem;
+  }
+  
+  .pta .collapsible label::before {
+    font-size: 0.5rem;
+  }
+  
+  /* Description */
+  .description {
+    padding: 0.4rem;
+    border-radius: 8px;
+  }
+  
+  .description label {
+    font-size: 0.9rem;
+  }
+  
+  /* Link Wrap */
+  .pta-link-wrap {
+    padding: 0.15rem 0.35rem;
+    border-radius: 3px;
+  }
+  
+  /* Passives Tab */
+  .passives-tab {
+    padding: 0.3rem;
+  }
+  
+  .passives-tab .passives-header h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .passives-tab .passives-list .item {
+    border-left-width: 2px;
+    margin-bottom: 0.2rem;
+  }
+  
+  /* Scrollbar menor em telas pequenas */
+  .pta ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  /* Remote Image Browser */
+  .pta .remote-image-browser .sprite-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4px;
+  }
+  
+  /* PC Layout Grid */
+  .pta-pc-layout-grid .pta-grid-item {
+    height: 60px;
+    flex: 0 0 60px;
+  }
+  
+  .pta-pc-layout-grid .pta-grid-item .wrapper {
+    min-width: 60px;
+    min-height: 60px;
+  }
+}
+
+/* === AJUSTES PARA ALTURA DE TELA PEQUENA (landscape em mobile) === */
+@media screen and (max-height: 500px) {
+  .pta .tab-content {
+    max-height: 40vh;
+  }
+  
+  .pta-skills-grid {
+    max-height: 200px !important;
+  }
+  
+  .pta-id-card .trainer-photo-container {
+    max-width: 180px;
+  }
+  
+  .pta-id-card .trainer-photo {
+    max-width: 180px;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-item {
+    width: 45px;
+    min-width: 45px;
+  }
+  
+  .pta-trainer-pokemon-strip .strip-item img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* === AJUSTES GERAIS DE OVERFLOW E TEXTO === */
+@media screen and (max-width: 991px) {
+  /* Evitar que textos longos quebrem o layout */
+  .pta * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Garantir que inputs não excedam a largura */
+  .pta input,
+  .pta textarea,
+  .pta select {
+    max-width: 100%;
+    min-width: 0;
+  }
+  
+  /* Ajuste para nomes longos */
+  .pta-id-card .pta-id-name {
+    word-break: break-word;
+    hyphens: auto;
+  }
+  
+  /* Garantir que class rows não excedam */
+  .pta-id-card .class-row {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .pta-id-card .class-row input[type="text"] {
+    min-width: 60px;
+  }
+}
