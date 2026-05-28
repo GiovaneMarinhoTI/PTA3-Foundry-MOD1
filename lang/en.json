@@ -1,0 +1,377 @@
+{
+  "PTA": {
+    "Ability": {
+      "Atk": {
+        "abbr": "atk",
+        "long": "Attack"
+      },
+      "Def": {
+        "abbr": "def",
+        "long": "Defence"
+      },
+      "SAtk": {
+        "abbr": "satk",
+        "long": "Sp. Attack"
+      },
+      "SDef": {
+        "abbr": "sdef",
+        "long": "Sp. Defence"
+      },
+      "Spd": {
+        "abbr": "spd",
+        "long": "Speed"
+      }
+    },
+    "Ac": {
+      "Physical": "Physical",
+      "Special": "Special",
+      "Status": "Status"
+    },
+    "Ailment": {
+      "Burn": {
+        "abbr": "brn",
+        "long": "Burn"
+      },
+      "Charm": {
+        "abbr": "inf",
+        "long": "Infatuated"
+      },
+      "Confuse": {
+        "abbr": "cfn",
+        "long": "Confuse"
+      },
+      "Curse": {
+        "abbr": "cur",
+        "long": "Curse"
+      },
+      "Dead": {
+        "abbr": "ded",
+        "long": "Dead"
+      },
+      "Fainted": {
+        "abbr": "fnt",
+        "long": "Fainted"
+      },
+      "Frozen": {
+        "abbr": "frz",
+        "long": "Frozen"
+      },
+      "Paralyzed": {
+        "abbr": "par",
+        "long": "Paralysis"
+      },
+      "Poison": {
+        "abbr": "psn",
+        "long": "Poison"
+      },
+      "Sleep": {
+        "abbr": "slp",
+        "long": "Sleep"
+      },
+      "Stun": {
+        "abbr": "stn",
+        "long": "Stun"
+      },
+      "Toxic": {
+        "abbr": "tox",
+        "long": "Toxic"
+      }
+    },
+    "Button": {
+      "GenerateSprite": "Generate Sprite",
+      "GenerateNpcSprite": "Generate Random NPC",
+      "ImportMove": "Import Move",
+      "ImportPokemon": "Import Pokémon",
+      "Local": "Local",
+      "Online": "Online",
+      "Submit": "Submit"
+    },
+    "Error": {
+      "NoTrainerSprites": "No trainer sprites were found in Pokemon Assets.",
+      "RandomNpcCreateFailed": "Failed to create a random NPC actor."
+    },
+    "Chat": {
+      "Attack": {
+        "Crit": "{user} used {move}, it's a critical hit!",
+        "Dodge": "{user} used {move}, but {target} dodged it!",
+        "Hit": "{user} used {move}, a direct hit!",
+        "Miss": "{user} used {move}, but it missed..."
+      },
+      "Damage": {
+        "Double": "{user} hit {target} with {move}, it's very effective!",
+        "Half": "{user} hit {target} with {move}, it's not very effective...",
+        "Immune": "{user} hit {target} with {move}, but they're immune...",
+        "Normal": "{user} hit {target} with {move}.",
+        "Quadruple": "{user} hit {target} with {move}, it's super effective!",
+        "Quarter": "{user} hit {target} with {move}, it was barely effective..."
+      },
+      "Lifesteal": "{user} drained {target} and is healed [[{drain}]] HP"
+    },
+    "Dialog": {
+      "Confirm": {
+        "deleteItem": "Are you sure you would like to delete: {name} <br><i>Hold shift to skip this prompt</i>"
+      }
+    },
+    "Effect": {
+      "Disabled": "Disabled Effects",
+      "Duration": "Duration",
+      "Inactive": "Inactive Effects",
+      "Passive": "Passive Effects",
+      "Source": "Source",
+      "Temporary": "Temporary Effects",
+      "Toggle": "Toggle Effect"
+    },
+    "Flavour": {
+      "Bitter": "Bitter",
+      "Dry": "Dry",
+      "long": "Flavour",
+      "Repulsive": "Repulsive",
+      "Sour": "Sour",
+      "Spicy": "Spicy",
+      "Sweet": "Sweet"
+    },
+    "Generic": {
+      "Male": "Male",
+      "Female": "Female",
+      "Accuracy": "Accuracy",
+      "Age": "Age",
+      "Ailment": "Ailment",
+      "All": "All",
+      "Capture": "Capture",
+      "Category": "Category",
+      "Damage": "Damage",
+      "Data": "Data",
+      "Default": "Default",
+      "Double": "Double",
+      "Effect": "Effect",
+      "Export": "Export",
+      "Eyes": "Eyes",
+      "Gender": "Gender",
+      "Hair": "Hair",
+      "Half": "Half",
+      "Health": "Health",
+      "Height": "Height",
+      "Honour": "Honour",
+      "Honours": "Honours",
+      "Immune": "Immune",
+      "Import": "Import",
+      "Loyalty": "Loyalty",
+      "MaxHealth": "Max Health",
+      "Movement": "Movement",
+      "Name": "Name",
+      "Nature": "Nature",
+      "None": "None",
+      "Normal": "Normal",
+      "Origin": "Origin",
+      "Physical": "Physical",
+      "Pokemon": "Pokémon",
+      "Quadruple": "Quadruple",
+      "Quarter": "Quarter",
+      "Rank": "Rank",
+      "Shiny": "Shiny",
+      "Size": "Size",
+      "Special": "Special",
+      "Species": "Species",
+      "Status": "Status",
+      "Sync": {
+        "abbr": "sync",
+        "long": "Synchronize"
+      },
+      "Trainer": "Trainer",
+      "Type": "Type",
+      "Types": "Types",
+      "Weight": "Weight"
+    },
+    "Method": {
+      "Add": "Add",
+      "Grow": "Grow",
+      "Multiply": "Multiply",
+      "Shrink": "Shrink",
+      "Subtract": "Subtract"
+    },
+    "Nature": {
+      "Adamant": "Adamant",
+      "Bashful": "Bashful",
+      "Bold": "Bold",
+      "Brave": "Brave",
+      "Calm": "Calm",
+      "Careful": "Careful",
+      "Docile": "Docile",
+      "Gentle": "Gentle",
+      "Hardy": "Hardy",
+      "Hasty": "Hasty",
+      "Impish": "Impish",
+      "Jolly": "Jolly",
+      "Lax": "Lax",
+      "Lonely": "Lonely",
+      "Mild": "Mild",
+      "Modest": "Modest",
+      "Naive": "Naive",
+      "Naughty": "Naughty",
+      "Quiet": "Quiet",
+      "Quirky": "Quirky",
+      "Rash": "Rash",
+      "Relaxed": "Relaxed",
+      "Sassy": "Sassy",
+      "Serious": "Serious",
+      "Timid": "Timid"
+    },
+    "SheetLabels": {
+      "Actor": "pta Actor Sheet",
+      "Item": "pta Item Sheet"
+    },
+    "Size": {
+      "Gigantic": "Gigantic",
+      "Huge": "Huge",
+      "Large": "Large",
+      "Medium": "Medium",
+      "Small": "Small",
+      "Tiny": "Tiny"
+    },
+    "Skill": {
+      "Acrobatics": {
+        "abbr": "",
+        "long": "Acrobatics"
+      },
+      "Athletics": {
+        "abbr": "",
+        "long": "Athletics"
+      },
+      "Bluff": {
+        "abbr": "",
+        "long": "Bluff"
+      },
+      "Concentration": {
+        "abbr": "",
+        "long": "Concentration"
+      },
+      "Constitution": {
+        "abbr": "",
+        "long": "Constitution"
+      },
+      "Diplomacy": {
+        "abbr": "",
+        "long": "Diplomacy"
+      },
+      "Engineering": {
+        "abbr": "",
+        "long": "Engineering"
+      },
+      "Handling": {
+        "abbr": "",
+        "long": "Handling"
+      },
+      "History": {
+        "abbr": "",
+        "long": "History"
+      },
+      "Insight": {
+        "abbr": "",
+        "long": "Insight"
+      },
+      "Investigation": {
+        "abbr": "",
+        "long": "Investigation"
+      },
+      "Medicine": {
+        "abbr": "",
+        "long": "Medicine"
+      },
+      "Nature": {
+        "abbr": "",
+        "long": "Nature"
+      },
+      "Perception": {
+        "abbr": "",
+        "long": "Perception"
+      },
+      "Perform": {
+        "abbr": "",
+        "long": "Perform"
+      },
+      "Programming": {
+        "abbr": "",
+        "long": "Programming"
+      },
+      "Stealth": {
+        "abbr": "",
+        "long": "Stealth"
+      },
+      "Subterfuge": {
+        "abbr": "",
+        "long": "Sleight of Hand"
+      }
+    },
+    "Tab": {
+      "Description": "Description",
+      "Details": "Details",
+      "Effects": "Effects",
+      "Features": "Features",
+      "Inventory": "Inventory",
+      "Passives": "Passives",
+      "Pokedex": "Pokédex",
+      "Pokemon": "Pokemon",
+      "Settings": "Settings",
+      "Skills": "Skills"
+    },
+    "Title": {
+      "ConfigResist": "Configure Resistances",
+      "FileServer": "File Server",
+      "ReleaseCreature": "Release Pokémon",
+      "SelectCreature": "Select Pokémon",
+      "ServerBrowser": "Remote Server Browser",
+      "TransferRune": "Transfer Rune",
+      "CompendiumBrowser": "Compendium Browser",
+      "UseCaptureSphere": "Use Capture Sphere",
+      "UseItem": "Use Item",
+      "MoveImporter": "Import moves",
+      "CreatureImporter": "Import Pokémon"
+    },
+    "Type": {
+      "Bug": "Bug",
+      "Cyber": "Cyber",
+      "Dark": "Dark",
+      "Dragon": "Dragon",
+      "Electric": "Electric",
+      "Fairy": "Fairy",
+      "Fighting": "Fighting",
+      "Fire": "Fire",
+      "Flying": "Flying",
+      "Ghost": "Ghost",
+      "Grass": "Grass",
+      "Ground": "Ground",
+      "Ice": "Ice",
+      "Light": "Light",
+      "Normal": "Normal",
+      "Nuclear": "Nuclear",
+      "Poison": "Poison",
+      "Psychic": "Psychic",
+      "Rock": "Rock",
+      "Steel": "Steel",
+      "Water": "Water"
+    },
+    "Weight": {
+      "Feather": "Feather Weight",
+      "Heavy": "Heavy",
+      "Light": "Light",
+      "Medium": "Medium",
+      "Super": "Super Heavy"
+    }
+  },
+  "TYPES": {
+    "Actor": {
+      "character": "Character",
+      "npc": "NPC",
+      "pokemon": "Pokémon"
+    },
+    "Item": {
+      "consumable": "Consumable",
+      "egg": "Pokémon Egg",
+      "equipment": "Equipment",
+      "feature": "Feature",
+      "move": "Move",
+      "pokeball": "Pokéball",
+      "potion": "Potion"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{{!-- 
+====================================================
+Input Requirements
+====================================================
+stats - object to be used as a list of stats to render
+skills - list of skills to render in
+--}}
+
+{{!-- The pokeball style display for showing a stat 
+stat - object with the data to render
+stat.value - the scores total
+stat.mod - stat modifier = floor(stat.value/2)
+key - the access key for the stat
+--}}
+{{#*inline 'stat-pokeball'}}
+  <div class="pta-score-wrap flexcol flex-group-center">
+    <div class="pta-stat-label text-center text-nowrap">{{stat.label.long}}</div>
+    <div class="pta-score flexcol pta-m">
+      {{#if @root.isEditMode}}
+        <input class="flex1 text-center" type="number" name="system.stats.{{key}}.value" value="{{stat.value}}">
+      {{else}}
+        <input class="flex1 text-center" type="number" disabled value="{{stat.total}}">
+      {{/if}}
+      <div class="flex1">{{numberFormat stat.mod sign=true decimals=0}}</div>
+    </div>
+  </div>
+{{/inline}}
+
+{{!-- Actual abilities and skills list --}}
+<div class="pta-stats">
+  {{#each stats as | stat key |}}
+    <div class="pta-stat-wrap pta-xs" data-pta-stat="{{key}}">
+      {{!-- stat score pokeball --}}
+      {{> 'stat-pokeball' stat=stat key=key}}
+    </div>
+  {{/each}}
+</div>

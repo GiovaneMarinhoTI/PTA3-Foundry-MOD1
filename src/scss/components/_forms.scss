@@ -1,0 +1,128 @@
+@use '../module' as *;
+
+.item-form {
+  font-family: $font-primary;
+}
+
+.sheet-header {
+  flex: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+
+  img {
+    flex: 0;
+  }
+  
+  .profile-img {
+    flex: 0 0 100px;
+    height: 100px;
+    margin-right: 10px;
+  }
+
+  .header-fields {
+    flex: 1;
+  }
+
+  h1.charname {
+    height: 50px;
+    padding: 0px;
+    margin: 5px 0;
+    border-bottom: 0;
+    display: flex;
+
+    input {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+  }
+}
+
+.sheet-tabs {
+  flex: 0;
+  margin-bottom: 0.5rem;
+}
+
+.sheet-body,
+.sheet-body .tab,
+.sheet-body .tab .editor {
+  height: 100%;
+}
+
+.description {
+  padding: 5px;
+  background-color: #302831;
+  border-radius: 10px;
+
+  label {
+    text-align: center;
+    font-size: 18px;
+    flex: 3;
+    border-bottom: 1px solid gold;
+  }
+
+  a {
+    flex: 0;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-nowrap {
+  text-wrap: nowrap;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  >label,
+  span.label {
+    flex: 1;
+  }
+
+  .form-fields {
+    flex: 2;
+  }
+
+  &:hover {
+
+    >label,
+    span.label {
+      color: var(--color)
+    }
+  }
+
+  &.stacked {
+    flex-direction: column;
+    label {
+      flex: 0;
+    }
+    input {
+      text-align: center;
+    }
+  }
+}
+
+.pta-link-wrap {
+  border-radius: 4px;
+  border: var(--pta-border, 1px solid rgb(159, 132, 117, 1));
+  background: var(--pta-link-bg, rgba(255,255,255,0.1));
+  padding: 0.2rem 0.5rem;
+}

@@ -1,0 +1,60 @@
+<div class="pta-tab">
+  <div class="flexcol flex-gap-m">
+
+    <div class="stat-bonuses">
+      <div><b>Stat Bonuses</b></div>
+      <div class="flexrow flex-gap-m flex-align-center">
+
+        {{#each stats as |stat key|}}
+          <div class="ability-bonus flexcol">
+            <div class="bonus-label">{{stat.label.long}}</div>
+            {{toFieldInput stat.field 'bonus' value=stat.bonus}}
+          </div>
+        {{/each}}
+
+        <div class="ability-bonus flexcol">
+          <div class="bonus-label">{{localize 'PTA.Generic.MaxHealth'}}</div>
+          {{systemFieldInput system 'bonuses.hpMax'}}
+        </div>
+      </div>
+    </div>
+
+    <ol class="items-list effects-list">
+      {{#each effects as |section sid|}}
+        <li class="items-header flexrow" data-effect-type="{{section.type}}" data-parent-id="{{@root.actor.id}}">
+          <h3 class="item-name effect-name flexrow">{{localize section.label}}</h3>
+          <div class="effect-source">{{localize "PTA.Effect.Source"}}</div>
+          <div class="effect-source">{{localize "PTA.Effect.Duration"}}</div>
+          <div class="item-controls effect-controls flexrow">
+            <a class="effect-control" data-action="effectCreate" title="{{localize 'DOCUMENT.Create' type=" Effect"}}">
+              <i class="fas fa-plus"></i> {{localize "DOCUMENT.New" type="Effect"}}
+            </a>
+          </div>
+        </li>
+        <ol class="item-list">
+          {{#each section.effects as |effect|}}
+            <li class="item effect flexrow text-center" data-effect-id="{{effect.id}}" data-uuid="{{effect.uuid}}">
+              <div class="item-name effect-name flexrow">
+                <img class="item-image" src="{{effect.img}}" />
+                <h4>{{effect.name}}</h4>
+              </div>
+              <div class="effect-source">{{effect.sourceName}}</div>
+              <div class="effect-duration">{{effect.duration.label}}</div>
+              <div class="item-controls effect-controls flexrow">
+                <a class="effect-control" data-action="effectToggle" title="{{localize 'PTA.Effect.Toggle'}}">
+                  <i class="fas {{#if effect.disabled}}fa-check{{else}}fa-times{{/if}}"></i>
+                </a>
+                <a class="effect-control" data-action="edit" title="{{localize 'DOCUMENT.Update' type=" Effect"}}">
+                  <i class="fas fa-edit"></i>
+                </a>
+                <a class="effect-control" data-action="delete" title="{{localize 'DOCUMENT.Delete' type=" Effect"}}">
+                  <i class="fas fa-trash"></i>
+                </a>
+              </div>
+            </li>
+          {{/each}}
+        </ol>
+      {{/each}}
+    </ol>
+  </div>
+</div>

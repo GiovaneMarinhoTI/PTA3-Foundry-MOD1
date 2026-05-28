@@ -1,0 +1,1388 @@
+/* ============================================================================
+   PTA3 GLOW UP - POKÉMON TRAINER CARD HORIZONTAL STYLE
+   Layout horizontal estilo documento/cartão oficial
+   ============================================================================ */
+
+/* Import Google Fonts - Seleção premium para visual Pokémon */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&family=Russo+One&family=Press+Start+2P&family=Exo+2:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --pta-scale-px: 8px;
+  --pta-scale-em: 1em;
+  --pta-scale-rem: 1rem;
+  
+  /* Pokémon Type Colors */
+  --pta-c-type-normal: #A8A77A;
+  --pta-c-type-fire: #EE8130;
+  --pta-c-type-water: #6390F0;
+  --pta-c-type-electric: #F7D02C;
+  --pta-c-type-grass: #7AC74C;
+  --pta-c-type-ice: #96D9D6;
+  --pta-c-type-fighting: #C22E28;
+  --pta-c-type-poison: #A33EA1;
+  --pta-c-type-ground: #E2BF65;
+  --pta-c-type-flying: #A98FF3;
+  --pta-c-type-psychic: #F95587;
+  --pta-c-type-bug: #A6B91A;
+  --pta-c-type-rock: #B6A136;
+  --pta-c-type-ghost: #735797;
+  --pta-c-type-dragon: #6F35FC;
+  --pta-c-type-dark: #705746;
+  --pta-c-type-steel: #B7B7CE;
+  --pta-c-type-fairy: #D685AD;
+  
+  /* Stats & HP Colors */
+  --pta-c-hp-red: #ff3d3d;
+  --pta-c-hp-yellow: #ffff75;
+  --pta-c-hp-green: #35a835;
+  --pta-c-stat-atk: rgb(255, 120, 120);
+  --pta-c-stat-def: rgb(255, 255, 143);
+  --pta-c-stat-satk: rgb(131, 255, 255);
+  --pta-c-stat-sdef: rgb(129, 255, 129);
+  --pta-c-stat-spd: rgb(196, 107, 255);
+
+  /* Glow-up Theme Variables */
+  --pta-trainer-bg-color: #2c4475;
+  --pta-trainer-bg-secondary: #1a2d52;
+  --pta-glass-bg: rgba(10, 18, 35, 0.85);
+  --pta-glass-border: rgba(255, 255, 255, 0.12);
+  --pta-neon-glow: rgba(100, 180, 255, 0.5);
+  --pta-gold-accent: #ffd700;
+  --pta-pokeball-red: #ee1515;
+  --pta-pokeball-white: #f0f0f0;
+  
+  /* Background Pattern */
+  --pta-bg-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M30 30m-28 0a28 28 0 1 0 56 0a28 28 0 1 0-56 0M30 30m-20 0a20 20 0 1 0 40 0a20 20 0 1 0-40 0M30 30m-8 0a8 8 0 1 0 16 0a8 8 0 1 0-16 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Global box-sizing + base font to prevent overflow stacking */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { max-width: 100%; overflow-x: hidden; }
+
+.pta { 
+  font-family: 'Poppins', 'Exo 2', sans-serif; 
+  color: #eef2ff; 
+  font-size: 14px; 
+  line-height: 1.4; 
+}
+
+/* AGGRESSIVE: Force ALL elements to respect boundaries */
+.pta * {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.pta > * {
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure inputs and form groups occupy available width to avoid overlapping */
+.pta .form-group, .pta .form-group .form-fields, .pta .form-group .form-field { width: 100% !important; max-width: 100% !important; display: block !important; }
+.pta input, .pta textarea, .pta select { max-width: 100% !important; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+/* Tab content scrolling and sizing */
+.pta-tab-content { 
+  background: var(--pta-glass-bg);
+  background-image: var(--pta-bg-pattern);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  border: 2px solid var(--pta-glass-border);
+  box-shadow: 
+    inset 0 2px 20px rgba(0,0,0,0.6), 
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255,255,255,0.05);
+  width: 100% !important;
+  flex: 1 1 100% !important; 
+}
+
+.pta-tab-content .wrapper { padding: 0.5rem; }
+
+.pta-tab { 
+  max-height: 100% !important; 
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0.75rem;
+  border-radius: 1.25rem;
+  background: rgba(8, 15, 35, 0.5);
+  background-image: var(--pta-bg-pattern);
+  gap: 0.75rem;
+}
+
+.pta .tab-content { 
+  overflow: auto !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  max-height: 60vh;
+}
+
+/* Window content */
+.pta .window-content { 
+  padding: 1.25rem;
+  min-height: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  background-image: var(--pta-bg-pattern);
+}
+
+.pta .window-content > * {
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Fix input fields and form groups to not overflow */
+.pta .form-group { 
+  width: 100%; 
+  max-width: 100%; 
+  box-sizing: border-box; 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Details tab: force two columns to stay within bounds */
+.pta .flexrow { 
+  flex-wrap: wrap;
+  max-width: 100%;
+  box-sizing: border-box;
+  gap: 0.6rem;
+  overflow-x: hidden;
+  display: flex;
+}
+.pta .flexcol {
+  max-width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.pta-tab .flexrow > .flexcol {
+  flex: 1 1 48%;
+  min-width: 200px;
+}
+
+/* Move sheet tabs to the right edge and make them compact */
+.pta .sheet-tabs { 
+  display: flex; 
+  justify-content: flex-end; 
+  gap: 0.5rem; 
+  align-items: center; 
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  background: rgba(0,0,0,0.2);
+  border-radius: 30px;
+}
+
+/* Tab headers - Pokéball style pills */
+.pta .sheet-tabs .item {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+  color: rgba(200, 220, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pta .sheet-tabs .item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.pta .sheet-tabs .item:hover::before {
+  left: 100%;
+}
+
+.pta .sheet-tabs .item:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  border-color: rgba(100, 180, 255, 0.6);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.pta .sheet-tabs .item.active {
+  background: linear-gradient(135deg, var(--pta-trainer-bg-color), color-mix(in srgb, var(--pta-trainer-bg-color) 70%, #000));
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  box-shadow: 
+    0 5px 20px var(--pta-neon-glow),
+    inset 0 1px 0 rgba(255,255,255,0.3);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.pta .window .window-header .window-title { padding-right: 4rem; }
+
+/* ============================================================================
+   TRAINER CARD (.pta-id-card) - LAYOUT HORIZONTAL ESTILO DOCUMENTO
+   ============================================================================ */
+.pta-id-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  border-radius: 16px;
+  /* Fundo dinâmico baseado na cor do treinador */
+  background: 
+    linear-gradient(135deg, 
+      color-mix(in srgb, var(--pta-trainer-bg-color) 100%, transparent) 0%,
+      color-mix(in srgb, var(--pta-trainer-bg-color) 60%, #0a0f1a) 50%,
+      color-mix(in srgb, var(--pta-trainer-bg-color) 30%, #050810) 100%
+    );
+  border: 3px solid rgba(255,255,255,0.25);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -2px 8px rgba(0, 0, 0, 0.3),
+    0 0 40px color-mix(in srgb, var(--pta-trainer-bg-color) 25%, transparent);
+  color: #f7f9ff;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto 0.75rem auto;
+  overflow: hidden;
+}
+
+/* Holographic shine overlay */
+.pta-id-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(
+      125deg,
+      transparent 0%,
+      rgba(255, 0, 128, 0.04) 20%,
+      rgba(0, 255, 128, 0.04) 40%,
+      rgba(0, 128, 255, 0.04) 60%,
+      rgba(255, 255, 0, 0.04) 80%,
+      transparent 100%
+    ),
+    radial-gradient(circle at 95% 5%, rgba(255,255,255,0.1) 0%, transparent 20%);
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  z-index: 1;
+  border-radius: 13px;
+}
+
+/* Animated shine effect */
+.pta-id-card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 40%,
+    rgba(255,255,255,0.08) 50%,
+    transparent 60%
+  );
+  animation: cardShine 10s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes cardShine {
+  0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(0deg); }
+  50% { transform: translateX(100%) translateY(100%) rotate(0deg); }
+}
+
+.pta-id-card > * {
+  z-index: 3;
+  position: relative;
+}
+
+/* Card Header - Badge estilo oficial compacto */
+.pta-id-card .card-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.9);
+  gap: 0.5rem;
+  background: linear-gradient(90deg, 
+    rgba(0,0,0,0.5), 
+    rgba(0,0,0,0.3),
+    rgba(0,0,0,0.5)
+  );
+  padding: 0.4rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 0;
+}
+
+.pta-id-card .card-brand {
+  font-family: 'Russo One', 'Bangers', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  text-shadow: 
+    0 1px 3px rgba(0,0,0,0.8),
+    0 0 15px var(--pta-neon-glow);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Pokéball icon before brand */
+.pta-id-card .card-brand::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--pta-pokeball-red) 50%, #fff 50%);
+  border: 2px solid #333;
+  box-shadow: 0 0 8px var(--pta-pokeball-red);
+}
+
+.pta-id-card .card-code {
+  font-family: 'Orbitron', 'Press Start 2P', monospace;
+  font-weight: 600;
+  color: var(--pta-gold-accent);
+  padding: 0.2rem 0.5rem;
+  font-size: 0.6rem;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 215, 0, 0.5);
+  letter-spacing: 0.08em;
+}
+
+/* ============================================================================
+   CARD MAIN - LAYOUT HORIZONTAL
+   ============================================================================ */
+.pta-id-card .card-main {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.75rem;
+  box-sizing: border-box;
+}
+
+/* Trainer Photo Section - Coluna esquerda com foto + nome */
+.pta-id-card .trainer-photo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+/* Container para efeito holografico atras de PNGs transparentes */
+.pta-id-card .trainer-photo-container {
+  position: relative;
+  width: 420px;
+  height: 270px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 
+    0 5px 15px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(0,0,0,0.3);
+}
+
+/* Background holografico animado - aparece atras de PNGs transparentes */
+.pta-id-card .trainer-photo-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    var(--pta-trainer-bg-color) 0%,
+    color-mix(in srgb, var(--pta-trainer-bg-color) 70%, #ffffff) 25%,
+    var(--pta-trainer-bg-color) 50%,
+    color-mix(in srgb, var(--pta-trainer-bg-color) 60%, #000000) 75%,
+    var(--pta-trainer-bg-color) 100%
+  );
+  background-size: 400% 400%;
+  animation: holographic-photo-bg 4s ease infinite;
+  z-index: 0;
+}
+
+/* Efeito de brilho que varre a foto */
+.pta-id-card .trainer-photo-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255,255,255,0.2) 50%,
+    transparent 70%
+  );
+  background-size: 200% 200%;
+  animation: shine-photo-sweep 3s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes holographic-photo-bg {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes shine-photo-sweep {
+  0%, 100% { background-position: -100% -100%; }
+  50% { background-position: 200% 200%; }
+}
+
+/* Trainer Portrait - Foto RETANGULAR horizontal */
+.pta-id-card .trainer-photo {
+  position: relative;
+  z-index: 2;
+  width: 420px;
+  height: 270px;
+  object-fit: contain;
+  background: transparent;
+}
+
+/* Nome do personagem abaixo da foto */
+.pta-id-card .trainer-photo-name {
+  font-family: 'Russo One', sans-serif;
+  font-size: 0.85rem;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: rgba(0,0,0,0.3);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  width: 100%;
+}
+
+/* Card Info Section - Área principal de informações */
+.pta-id-card .card-info {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+/* Trainer Name - Input editável */
+.pta-id-card .pta-id-name {
+  font-family: 'Russo One', 'Bangers', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  line-height: 1.2;
+  text-shadow: 
+    0 2px 4px rgba(0,0,0,0.7),
+    0 0 20px color-mix(in srgb, var(--pta-trainer-bg-color) 40%, transparent);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.pta-id-card .pta-id-name:focus {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  padding: 0.2rem 0.4rem;
+  box-shadow: 
+    inset 0 0 8px rgba(0,0,0,0.4),
+    0 0 12px var(--pta-neon-glow);
+}
+
+/* Card Meta Info - Tags estilo badge em linha */
+.pta-id-card .card-meta {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.pta-id-card .card-meta > * {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  font-family: 'Orbitron', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Classes Panel - Em linha horizontal */
+.pta-card-classes {
+  flex: 1 1 100%;
+  min-width: auto;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.pta-id-card .class-panel {
+  min-width: auto;
+  max-width: 100%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.12));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.pta-id-card .class-panel > .flexcol {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pta-id-card .class-label {
+  margin-bottom: 0.3rem;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--pta-gold-accent);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.pta-id-card .class-label::before {
+  content: "";
+  font-size: 0.6rem;
+}
+
+.pta-id-card .class-row {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex: 1 1 160px;
+}
+
+.pta-id-card .class-row input {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 5px;
+  padding: 0.25rem 0.5rem;
+  height: 1.75rem;
+  font-size: 0.8rem;
+  min-width: 0;
+  transition: all 0.3s ease;
+}
+
+.pta-id-card .class-row input:focus {
+  border-color: var(--pta-gold-accent);
+  background: rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.25);
+}
+
+.pta-id-card .class-row input[type="text"] { flex: 1 1 80px; max-width: 100%; }
+.pta-id-card .class-row input[type="number"] { width: 2.5rem; min-width: 2.5rem; flex: 0 0 auto; text-align: center; }
+
+/* ============================================================================
+   COLOR PICKER - MINIMALISTA E COMPACTO
+   ============================================================================ */
+.pta-id-card .trainer-card-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0.4rem 0.75rem;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.35));
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 0.5rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.pta-id-card .trainer-card-controls.compact {
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.pta-id-card .trainer-card-controls.compact .color-hint {
+  font-family: 'Exo 2', sans-serif;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+/* Color Picker Button - MINIMALISTA */
+.pta-id-card .color-picker-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.8);
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+  color: #fff;
+  font-size: 0.5rem;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  flex-shrink: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: all 0.25s ease;
+}
+
+.pta-id-card .color-picker-button:hover { 
+  transform: scale(1.15);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+}
+
+.pta-id-card .color-picker-button input { 
+  position: absolute; 
+  inset: 0; 
+  opacity: 0; 
+  cursor: pointer; 
+}
+
+/* Preset Color Swatches - MINIMALISTAS */
+.color-presets {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.color-preset {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+
+.color-preset:hover {
+  transform: scale(1.25);
+  border-color: #fff;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.color-preset.fire { background: var(--pta-c-type-fire); }
+.color-preset.water { background: var(--pta-c-type-water); }
+.color-preset.grass { background: var(--pta-c-type-grass); }
+.color-preset.electric { background: var(--pta-c-type-electric); }
+.color-preset.psychic { background: var(--pta-c-type-psychic); }
+.color-preset.dragon { background: var(--pta-c-type-dragon); }
+.color-preset.dark { background: var(--pta-c-type-dark); }
+.color-preset.steel { background: var(--pta-c-type-steel); }
+.color-preset.fairy { background: var(--pta-c-type-fairy); }
+.color-preset.ghost { background: var(--pta-c-type-ghost); }
+
+/* ============================================================================
+   SKILLS GRID & TALENTS
+   ============================================================================ */
+.pta-skills-grid { 
+  max-height: 450px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 1rem !important;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+  gap: 0.75rem !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  background: rgba(0,0,0,0.15);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.pta-skills-grid .pta-skill { 
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.6rem !important;
+  padding: 0.6rem 0.8rem !important;
+  border-radius: 10px !important;
+  background: linear-gradient(135deg, rgba(25, 40, 70, 0.7), rgba(15, 25, 50, 0.7)) !important;
+  border: 2px solid rgba(100, 150, 255, 0.15) !important;
+  box-shadow: 
+    0 3px 10px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  width: 100% !important;
+}
+
+.pta-skills-grid .pta-skill:hover {
+  background: linear-gradient(135deg, rgba(40, 70, 120, 0.9), rgba(25, 45, 85, 0.9)) !important;
+  border-color: rgba(100, 180, 255, 0.6) !important;
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 
+    0 8px 20px rgba(0,0,0,0.4),
+    0 0 20px var(--pta-neon-glow) !important;
+}
+
+.pta-skills-grid .skill-score { 
+  font-family: 'Orbitron', monospace;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+  padding: 6px 8px; 
+  border-radius: 6px; 
+  font-weight: 700; 
+  font-size: 0.9rem;
+  color: #64d8ff;
+  border: 2px solid rgba(100, 180, 255, 0.4);
+  min-width: 40px;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(100, 216, 255, 0.5);
+}
+
+.pta-skills-grid .skill-name { 
+  font-family: 'Poppins', sans-serif;
+  color: rgba(240, 247, 255, 0.95); 
+  font-size: 0.9rem;
+  font-weight: 600;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ============================================================================
+   WINDOW HEADER & GENERAL UI
+   ============================================================================ */
+.pta .window {
+  background: linear-gradient(145deg, #0d1220, #151d2e, #0d1220);
+  background-image: var(--pta-bg-pattern);
+  border: 2px solid rgba(100, 150, 255, 0.25);
+  border-radius: 16px;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(255,255,255,0.05),
+    0 0 80px rgba(100, 150, 255, 0.1);
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+}
+
+.pta .window-header {
+  background: linear-gradient(90deg, rgba(8, 12, 25, 0.98), rgba(15, 22, 40, 0.98), rgba(8, 12, 25, 0.98));
+  border-bottom: 2px solid rgba(100, 150, 255, 0.25);
+  padding: 0.6rem 1rem;
+}
+
+.pta .window-header .window-title {
+  font-family: 'Russo One', 'Bangers', sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-shadow: 
+    0 0 15px var(--pta-neon-glow),
+    0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Collapsible sections */
+.pta .collapsible {
+  background: linear-gradient(135deg, rgba(25, 40, 70, 0.5), rgba(15, 25, 50, 0.5));
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  margin: 0.5rem 0;
+  overflow: hidden;
+}
+
+.pta .collapsible label {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+  color: rgba(100, 200, 255, 0.95);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(90deg, rgba(0,0,0,0.3), rgba(0,0,0,0.15), rgba(0,0,0,0.3));
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pta .collapsible label::before {
+  content: ">";
+  font-size: 0.6rem;
+  transition: transform 0.3s ease;
+}
+
+.pta .collapsible.open label::before {
+  transform: rotate(90deg);
+}
+
+.pta .collapsible label:hover { 
+  color: #fff; 
+  background: linear-gradient(90deg, rgba(0,0,0,0.4), rgba(0,0,0,0.25), rgba(0,0,0,0.4));
+  text-shadow: 0 0 15px var(--pta-neon-glow);
+}
+
+/* Form inputs (Text, Number, Select) */
+.pta .form-group label {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+  color: rgba(200, 220, 255, 0.95);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  flex: 0 0 110px;
+}
+
+.pta input[type="text"],
+.pta input[type="number"],
+.pta textarea,
+.pta select {
+  background: linear-gradient(135deg, rgba(12, 20, 40, 0.8), rgba(8, 15, 30, 0.8));
+  border: 2px solid rgba(100, 150, 255, 0.25) !important;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 3px 8px rgba(0,0,0,0.3);
+  width: 100%;
+}
+
+.pta input:focus,
+.pta textarea:focus,
+.pta select:focus {
+  background: linear-gradient(135deg, rgba(20, 35, 65, 0.9), rgba(15, 28, 55, 0.9));
+  border-color: rgba(100, 180, 255, 0.8) !important;
+  box-shadow: 
+    inset 0 3px 8px rgba(0,0,0,0.3),
+    0 0 20px rgba(100, 150, 255, 0.4) !important;
+  outline: none;
+}
+
+/* ============================================================================
+   POKEMON TEAM / STRIP VIEW
+   ============================================================================ */
+.pta-trainer-pokemon-strip {
+  margin-top: 0.75rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.15));
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    inset 0 3px 15px rgba(0,0,0,0.3),
+    0 5px 20px rgba(0,0,0,0.2);
+}
+
+.pta-trainer-pokemon-strip .strip-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.pta-trainer-pokemon-strip .strip-title {
+  font-family: 'Russo One', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 15px var(--pta-neon-glow);
+}
+
+.pta-trainer-pokemon-strip .strip-note {
+  font-family: 'Poppins', sans-serif;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.pta-trainer-pokemon-strip .strip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.pta-trainer-pokemon-strip .strip-item {
+  width: 80px;
+  min-width: 80px;
+  flex: 0 0 auto;
+  padding: 0.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+
+.pta-trainer-pokemon-strip .strip-item:hover,
+.pta-trainer-pokemon-strip .strip-item.active {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  border-color: var(--pta-trainer-bg-color, #6b7280);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 
+    0 8px 20px rgba(0,0,0,0.4),
+    0 0 20px color-mix(in srgb, var(--pta-trainer-bg-color) 50%, transparent);
+}
+
+.pta-trainer-pokemon-strip .strip-item img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.4rem;
+  background: rgba(0,0,0,0.4);
+  border: 2px solid rgba(255,255,255,0.15);
+  transition: all 0.3s ease;
+}
+
+.pta-trainer-pokemon-strip .strip-item:hover img {
+  border-color: rgba(255,255,255,0.4);
+}
+
+.pta-trainer-pokemon-strip .strip-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #fff;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Pokemon List Item (Inside standard view) */
+ol.pta-pokemon-team .pta-pokemon {
+  background: linear-gradient(135deg, rgba(20, 35, 65, 0.9), rgba(30, 50, 90, 0.9));
+  margin-bottom: 0.75rem;
+  width: 100%;
+  min-height: 85px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 5px 15px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  clip-path: none; 
+}
+
+ol.pta-pokemon-team .pta-pokemon:hover { 
+  transform: translateY(-3px); 
+  border-color: rgba(255,255,255,0.3);
+  box-shadow: 
+    0 10px 25px rgba(0,0,0,0.4),
+    0 0 25px var(--pta-neon-glow);
+}
+
+ol.pta-pokemon-team .pta-pokemon .portrait {
+  flex: 0 0 70px;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.4);
+  border: 3px solid rgba(255,255,255,0.15);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+ol.pta-pokemon-team .pta-pokemon .portrait img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain; 
+}
+
+ol.pta-pokemon-team .pta-pokemon .details {
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  flex: 1;
+}
+
+ol.pta-pokemon-team .pta-pokemon .nickname {
+  font-family: 'Russo One', sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Badges section */
+.pta-trainer-badges { display: none !important; }
+
+/* ============================================================================
+   PROGRESS BARS (HP / EXP)
+   ============================================================================ */
+.progress-bar {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.15);
+  box-shadow: 
+    inset 0 3px 8px rgba(0,0,0,0.6),
+    0 2px 8px rgba(0,0,0,0.3);
+  height: 24px;
+}
+
+.progress-bar label {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+  align-content: center;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+  padding: 0 0.75em;
+  font-size: 0.75rem;
+  color: #fff;
+  border-right: 2px solid rgba(255,255,255,0.15);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.progress-bar > .wrapper { display: grid; flex: 1; }
+.progress-bar > .wrapper > * { grid-column-start: 1; grid-row-start: 1; }
+
+.progress-bar > .wrapper .bar {
+  grid-area: 0 0;
+  min-height: 100%;
+  width: 50%; /* JS managed */
+  border-radius: 0;
+  box-shadow: 
+    0 0 15px rgba(255,255,255,0.3) inset,
+    0 0 20px currentColor;
+}
+
+.progress-bar > .wrapper .bar.red { 
+  background: linear-gradient(90deg, #b71c1c, #f44336, #ff5252); 
+  box-shadow: inset 0 0 15px rgba(255,255,255,0.3), 0 0 15px #ff5252;
+}
+.progress-bar > .wrapper .bar.yellow { 
+  background: linear-gradient(90deg, #f9a825, #ffeb3b, #ffff8d); 
+  box-shadow: inset 0 0 15px rgba(255,255,255,0.3), 0 0 15px #ffeb3b;
+}
+.progress-bar > .wrapper .bar.green { 
+  background: linear-gradient(90deg, #2e7d32, #4caf50, #81c784); 
+  box-shadow: inset 0 0 15px rgba(255,255,255,0.3), 0 0 15px #4caf50;
+}
+
+.progress-bar > .wrapper input {
+  font-family: 'Orbitron', monospace;
+  font-size: 0.85rem;
+  font-weight: bold;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  background: transparent;
+  border: none;
+  color: #fff;
+  text-shadow: 
+    0 1px 3px rgba(0,0,0,0.9),
+    0 0 10px rgba(255,255,255,0.3);
+}
+
+/* ============================================================================
+   LISTS, ITEMS & TYPE TAGS
+   ============================================================================ */
+ol.items-list {
+  list-style: none;
+  margin: 0; 
+  padding: 0;
+  width: 100% !important;
+}
+
+ol.items-list .items-header {
+  background: linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03), rgba(255,255,255,0.08));
+  border: 2px solid rgba(255,255,255,0.1);
+  border-radius: 10px 10px 0 0;
+  font-family: 'Exo 2', sans-serif;
+  color: rgba(255,255,255,0.9);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  font-weight: 700;
+}
+
+ol.items-list .item {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+}
+
+ol.items-list .item:hover { 
+  background: rgba(255,255,255,0.08);
+  padding-left: 1rem;
+}
+
+ol.items-list .item:last-child { 
+  border-bottom: none; 
+  border-radius: 0 0 10px 10px; 
+}
+
+ol.items-list .item-name { 
+  font-family: 'Poppins', sans-serif; 
+  font-size: 0.95rem; 
+  font-weight: 500; 
+}
+
+/* Type Tags - Estilo autêntico Pokémon */
+.type-tag {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: 6px;
+  border: 2px solid;
+  padding: 3px 10px;
+  width: fit-content;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.4);
+  box-shadow: 
+    0 2px 6px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+  transition: all 0.2s ease;
+}
+
+.type-tag:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 4px 12px rgba(0,0,0,0.4),
+    0 0 15px currentColor;
+}
+
+.type-tag.normal { border-color: var(--pta-c-type-normal); color: var(--pta-c-type-normal); background: linear-gradient(135deg, rgba(168, 167, 122, 0.3), rgba(168, 167, 122, 0.1)); }
+.type-tag.fire { border-color: var(--pta-c-type-fire); color: var(--pta-c-type-fire); background: linear-gradient(135deg, rgba(238, 129, 48, 0.3), rgba(238, 129, 48, 0.1)); }
+.type-tag.water { border-color: var(--pta-c-type-water); color: var(--pta-c-type-water); background: linear-gradient(135deg, rgba(99, 144, 240, 0.3), rgba(99, 144, 240, 0.1)); }
+.type-tag.electric { border-color: var(--pta-c-type-electric); color: var(--pta-c-type-electric); background: linear-gradient(135deg, rgba(247, 208, 44, 0.3), rgba(247, 208, 44, 0.1)); }
+.type-tag.grass { border-color: var(--pta-c-type-grass); color: var(--pta-c-type-grass); background: linear-gradient(135deg, rgba(122, 199, 76, 0.3), rgba(122, 199, 76, 0.1)); }
+.type-tag.ice { border-color: var(--pta-c-type-ice); color: var(--pta-c-type-ice); background: linear-gradient(135deg, rgba(150, 217, 214, 0.3), rgba(150, 217, 214, 0.1)); }
+.type-tag.fighting { border-color: var(--pta-c-type-fighting); color: var(--pta-c-type-fighting); background: linear-gradient(135deg, rgba(194, 46, 40, 0.3), rgba(194, 46, 40, 0.1)); }
+.type-tag.poison { border-color: var(--pta-c-type-poison); color: var(--pta-c-type-poison); background: linear-gradient(135deg, rgba(163, 62, 161, 0.3), rgba(163, 62, 161, 0.1)); }
+.type-tag.ground { border-color: var(--pta-c-type-ground); color: var(--pta-c-type-ground); background: linear-gradient(135deg, rgba(226, 191, 101, 0.3), rgba(226, 191, 101, 0.1)); }
+.type-tag.flying { border-color: var(--pta-c-type-flying); color: var(--pta-c-type-flying); background: linear-gradient(135deg, rgba(169, 143, 243, 0.3), rgba(169, 143, 243, 0.1)); }
+.type-tag.psychic { border-color: var(--pta-c-type-psychic); color: var(--pta-c-type-psychic); background: linear-gradient(135deg, rgba(249, 85, 135, 0.3), rgba(249, 85, 135, 0.1)); }
+.type-tag.bug { border-color: var(--pta-c-type-bug); color: var(--pta-c-type-bug); background: linear-gradient(135deg, rgba(166, 185, 26, 0.3), rgba(166, 185, 26, 0.1)); }
+.type-tag.rock { border-color: var(--pta-c-type-rock); color: var(--pta-c-type-rock); background: linear-gradient(135deg, rgba(182, 161, 54, 0.3), rgba(182, 161, 54, 0.1)); }
+.type-tag.ghost { border-color: var(--pta-c-type-ghost); color: var(--pta-c-type-ghost); background: linear-gradient(135deg, rgba(115, 87, 151, 0.3), rgba(115, 87, 151, 0.1)); }
+.type-tag.dragon { border-color: var(--pta-c-type-dragon); color: var(--pta-c-type-dragon); background: linear-gradient(135deg, rgba(111, 53, 252, 0.3), rgba(111, 53, 252, 0.1)); }
+.type-tag.dark { border-color: var(--pta-c-type-dark); color: var(--pta-c-type-dark); background: linear-gradient(135deg, rgba(112, 87, 70, 0.3), rgba(112, 87, 70, 0.1)); }
+.type-tag.steel { border-color: var(--pta-c-type-steel); color: var(--pta-c-type-steel); background: linear-gradient(135deg, rgba(183, 183, 206, 0.3), rgba(183, 183, 206, 0.1)); }
+.type-tag.fairy { border-color: var(--pta-c-type-fairy); color: var(--pta-c-type-fairy); background: linear-gradient(135deg, rgba(214, 133, 173, 0.3), rgba(214, 133, 173, 0.1)); }
+
+/* Item Controls */
+.pta-move-list .item-controls a, ol.items-list .item-controls a { 
+  margin-left: 8px !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 1rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.pta-move-list .item-controls a:hover, ol.items-list .item-controls a:hover {
+  color: #64d8ff !important;
+  text-shadow: 0 0 15px rgba(100, 216, 255, 0.8);
+  transform: scale(1.2);
+}
+
+/* ============================================================================
+   MISC UTILITIES
+   ============================================================================ */
+.pta-xs, .pta-font-xs, .pta-px-xs { --pta-scale-px: 3px; --pta-scale-em: 0.6em; --pta-scale-rem: 0.6rem; }
+.pta-s, .pta-font-s, .pta-px-s { --pta-scale-px: 4px; --pta-scale-em: 0.8em; --pta-scale-rem: 0.8rem; }
+.pta-m, .pta-font-m, .pta-px-m { --pta-scale-px: 8px; --pta-scale-em: 1em; --pta-scale-rem: 1rem; }
+.pta-l, .pta-font-l, .pta-px-l { --pta-scale-px: 12px; --pta-scale-em: 1.5em; --pta-scale-rem: 1.5rem; }
+.pta-xl, .pta-font-xl, .pta-px-xl { --pta-scale-px: 18px; --pta-scale-em: 2em; --pta-scale-rem: 2rem; }
+
+.rollable:hover, .rollable:focus { 
+  color: #64d8ff; 
+  text-shadow: 0 0 15px rgba(100, 216, 255, 0.8); 
+  cursor: pointer; 
+}
+
+[data-action] { cursor: pointer; }
+.nodisplay, .nodisplay *, .obliterated, .obliterated * { display: none !important; }
+
+/* Grid system */
+.grid, .grid-2col { display: grid; grid-column: span 2/span 2; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 12px 0; padding: 0; }
+.grid-3col { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-4col { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.grid-5col { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.grid-6col { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.grid-start-2 { grid-column-start: 2; }
+.grid-start-3 { grid-column-start: 3; }
+.grid-span-2 { grid-column-end: span 2; }
+.grid-span-3 { grid-column-end: span 3; }
+
+.pta .flex-group-center { justify-content: center; align-items: center; text-align: center; }
+.pta .flex-group-start { justify-content: flex-start; text-align: left; }
+.pta .flex-group-end { justify-content: flex-end; text-align: right; }
+.pta .flexshrink { flex: 0; }
+.pta .flex-between { justify-content: space-between; }
+.pta .flexlarge { flex: 2; }
+
+/* General Layout Fixes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-nowrap { text-wrap: nowrap; word-break: keep-all; word-wrap: break-word; }
+
+/* ============================================================================
+   SCROLLBAR STYLING - Estilo personalizado
+   ============================================================================ */
+.pta ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.pta ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.pta ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--pta-trainer-bg-color), color-mix(in srgb, var(--pta-trainer-bg-color) 60%, #000));
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.pta ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--pta-trainer-bg-color) 120%, #fff), var(--pta-trainer-bg-color));
+}
+
+/* ============================================================================
+   ANIMATIONS
+   ============================================================================ */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px var(--pta-neon-glow); }
+  50% { box-shadow: 0 0 20px var(--pta-neon-glow), 0 0 30px var(--pta-neon-glow); }
+}
+
+.pta-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.pta-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ============================================================================
+   PASSIVES TAB - Estilos para a aba de passivas
+   ============================================================================ */
+.passives-tab {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.passives-tab .passives-header h3 {
+  font-family: 'Exo 2', 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--pta-gold-accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+.passives-tab .passives-list {
+  width: 100%;
+}
+
+.passives-tab .passives-list .item {
+  background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05), rgba(255, 215, 0, 0.1));
+  border-left: 3px solid var(--pta-gold-accent);
+  margin-bottom: 0.3rem;
+  transition: all 0.2s ease;
+}
+
+.passives-tab .passives-list .item:hover {
+  background: linear-gradient(90deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.2));
+  border-left-width: 5px;
+  padding-left: 1rem;
+}
+
+.passives-tab .passives-list .item .fa-star {
+  color: var(--pta-gold-accent);
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+}

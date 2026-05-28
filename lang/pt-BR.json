@@ -1,0 +1,47 @@
+{
+  "PTA": {
+    "Skill": {
+      "Acrobatics": {"long": "Acrobacia"},
+      "Athletics": {"long": "Atletismo"},
+      "Bluff": {"long": "Blefe"},
+      "Concentration": {"long": "Concentração"},
+      "Constitution": {"long": "Constituição"},
+      "Diplomacy": {"long": "Diplomacia"},
+      "Engineering": {"long": "Engenharia"},
+      "Handling": {"long": "Manipulação"},
+      "History": {"long": "História"},
+      "Insight": {"long": "Percepção"},
+      "Investigation": {"long": "Investigação"},
+      "Medicine": {"long": "Medicina"},
+      "Nature": {"long": "Natureza"},
+      "Perception": {"long": "Percepção"},
+      "Perform": {"long": "Atuação"},
+      "Programming": {"long": "Programação"},
+      "Stealth": {"long": "Furtividade"},
+      "Subterfuge": {"long": "Prestidigitação"}
+    },
+    "Generic": {
+      "Health": "Saúde",
+      "Name": "Nome",
+      "Age": "Idade",
+      "Gender": "Gênero",
+      "Height": "Altura",
+      "Weight": "Peso",
+      "Description": "Descrição",
+      "Pokemon": "Pokémon",
+      "Inventory": "Inventário",
+      "Features": "Características",
+      "Details": "Detalhes"
+    },
+    "Tab": {
+      "Features": "Características",
+      "Inventory": "Inventário",
+      "Pokemon": "Pokémon",
+      "Details": "Detalhes",
+      "Passives": "Passivas",
+      "Skills": "Habilidades",
+      "Effects": "Efeitos",
+      "Pokedex": "Pokédex"
+    }
+  }
+}

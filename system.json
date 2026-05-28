@@ -1,0 +1,85 @@
+{
+    "id": "pta3",
+    "title": "Pokemon Tabletop Adventures 3",
+    "description": "The 3rd edition Pokemon Tabletop Adventures for FoundryVTT!",
+    "authors": [
+        {
+            "name": "Ásta"
+        }
+    ],
+    "license": "LICENSE.txt",
+    "readme": "README.md",
+    "bugs": "Replace this with a link to file issues or tickets",
+    "changelog": "CHANGELOG.md",
+    "media": [
+        {
+            "type": "setup",
+            "url": "systems/pta3/assets/anvil-impact.png",
+            "thumbnail": "systems/pta3/assets/anvil-impact.png"
+        }
+    ],
+    "version": "1.4.0",
+    "compatibility": {
+        "minimum": "14.360",
+        "verified": "14.360"
+    },
+    "esmodules": [
+        "module/pta3.mjs"
+    ],
+    "styles": [
+        "css/pta3.css"
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        },
+        {
+            "lang": "pt-BR",
+            "name": "Português (Brasil)",
+            "path": "lang/pt-BR.json"
+        }
+    ],
+    "packs": [
+        {
+            "label": "Tools",
+            "name": "macro-tools",
+            "path": "packs/macro",
+            "system": "",
+            "type": "Macro",
+            "ownership": {
+                "ASSISTANT": "OBSERVER",
+                "GAMEMASTER": "OWNER",
+                "PLAYER": "OBSERVER",
+                "TRUSTED": "OBSERVER"
+            }
+        }
+    ],
+    "packFolders": [],
+    "socket": true,
+    "url": "https://github.com/dragonkie/PTA3-FVTT",
+    "manifest": "https://github.com/dragonkie/PTA3-FVTT/releases/latest/download/system.json",
+    "download": "https://github.com/dragonkie/PTA3-FVTT/releases/latest/download/pta3.zip",
+    "background": "systems/pta3/assets/anvil-impact.png",
+    "grid": {
+        "distance": 5,
+        "units": "ft"
+    },
+    "primaryTokenAttribute": "hp",
+    "secondaryTokenAttribute": "",
+    "documentTypes": {
+        "Actor": {
+            "character": {},
+            "npc": {},
+            "pokemon": {}
+        },
+        "Item": {
+            "equipment": {},
+            "feature": {},
+            "move": {},
+            "pokeball": {},
+            "consumable": {}
+        }
+    }
+}

@@ -1,0 +1,60 @@
+<div class="pta-tab flex-gap-m flexcol">
+    <div class="flexrow flex-gap-m">
+        <div class="flexcol flex-gap-m">
+            {{systemFieldGroup system 'shiny'}}
+            {{systemFieldGroup system 'size'}}
+            {{systemFieldGroup system 'weight'}}
+        </div>
+        <div class="flexcol flex-gap-m">
+            {{systemFieldGroup system 'gender'}}
+            {{systemFieldGroup system 'nature'}}
+            {{systemFieldGroup system 'species'}}
+        </div>
+    </div>
+    {{systemFieldGroup system 'loyalty'}}
+    <div class="flexcol">
+        <div class="flexrow flex-gap-l">
+            <a data-action="editEggGroups" class="fas fa-cog flex0"></a><b>Egg Groups</b>
+        </div>
+        <div class="flexrow flex-gap-s">
+            {{!-- If there arent any egg types, display tooltip text, else show list --}}
+            {{#if (eq 0 (arrayLength system.eggTypes))}}
+                <div class="flex0">{{localize 'PTA.Tooltip.AddEggTypes'}}</div>
+            {{else}}
+                {{#each system.eggTypes as |egg|}}
+                    <div class="flex0">{{egg}}</div>
+                {{/each}}
+            {{/if}}
+
+        </div>
+    </div>
+    <div class="flexrow flex-gap-l">
+        <a data-action="editResistance" class="fas fa-cog flex0"></a><b>Resistance Overrides</b>
+    </div>
+    <div class="flexcol flex-gap-s">
+        <div class="description collapsible">
+            <div class="flexrow" data-action="collapse">
+                <a style="flex: 0; margin: 0 5px"><i class="fa-solid fa-caret-down"></i></a>
+                <label>Description</label>
+            </div>
+            <div class="collapsible-content">
+                <div class="wrapper">
+                    {{formInput description.field value=description.value enriched=description.enriched name='system.description' toggled=true}}
+                </div>
+            </div>
+        </div>
+        {{#if (isGM)}}
+            <div class="description collapsible collapsed">
+                <div class="flexrow" data-action="collapse">
+                    <a style="flex: 0; margin: 0 5px"><i class="fa-solid fa-caret-down"></i></a>
+                    <label>GM Notes</label>
+                </div>
+                <div class="collapsible-content">
+                    <div class="wrapper">
+                        {{formInput gmNotes.field value=gmNotes.value enriched=gmNotes.enriched name='system.gmNotes' toggled=true}}
+                    </div>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+</div>

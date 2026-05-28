@@ -1,0 +1,45 @@
+<div>
+    <header class="pta-id-card pta-actor-sheet-header pta-sheet-header">
+        <div class="card-badge flexrow flex-between">
+            <span class="card-brand">POKÉMON CARD</span>
+            <span class="card-code">TYPE {{document.type}}</span>
+        </div>
+        <div class="flexrow flex-gap-m card-main">
+            <img class="trainer-photo flex0" data-action="editImage" width="120" height="120" src="{{document.img}}">
+            <div class="flexcol flex-gap-m card-info">
+                <div class="card-title-row flexrow flex-align-end">
+                    <input class="pta-font-xl pta-id-name" type="text" value="{{document.name}}" name="name">
+                </div>
+                <div class="type-row flexrow flex-gap-s">
+                    <div class="type-tag {{system.types.primary}} pta-s">
+                        <div class="wrapper">
+                            {{systemFieldInput system 'types.primary'}}
+                        </div>
+                    </div>
+                    <div class="type-tag {{system.types.secondary}} pta-s">
+                        <div class="wrapper">
+                            {{systemFieldInput system 'types.secondary'}}
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <label>Health</label>
+                    <div class="wrapper">
+                        <div class="bar {{#if (lt (divide system.hp.value system.hp.max) 0.33)}}red{{else}}green{{/if}}" style="width: {{multiply 100 (divide system.hp.value system.hp.total)}}%;">
+                        </div>
+                        <div class="flexrow pta-s card-health-value">
+                            {{systemFieldInput system 'hp.value'}}/
+                            {{#if isEditMode}}
+                                {{systemFieldInput system 'hp.max'}}
+                            {{else}}
+                                <div class="text-center">{{system.hp.total}}</div>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {{> "pta.tabs-content"}}
+</div>

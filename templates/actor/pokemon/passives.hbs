@@ -1,0 +1,33 @@
+<div class="passives-tab flexcol flex-gap-m">
+    <div class="passives-header">
+        <h3>Passivas</h3>
+    </div>
+    <ol class="passives-list items-list">
+        <li class="items-header flexrow">
+            <span class="item-name">Nome da Passiva</span>
+        </li>
+        {{#if system.passives.length}}
+            {{#each system.passives as |passive index|}}
+                <li class="item flexcol" data-passive-index="{{index}}" style="padding: 8px; margin-bottom: 8px; border-bottom: 1px solid rgba(0,0,0,0.1);">
+                    <div class="item-name flexrow" style="font-weight: bold;">
+                        <i class="fas fa-star"></i>
+                        <span style="margin-left: 8px;">{{passive}}</span>
+                    </div>
+                    {{#with (lookup ../system.passiveDescriptions index) as |description|}}
+                        {{#if description}}
+                            <div class="passive-description" style="margin-top: 4px; margin-left: 24px; font-size: 0.9em; color: #555; font-style: italic;">
+                                {{description}}
+                            </div>
+                        {{/if}}
+                    {{/with}}
+                </li>
+            {{/each}}
+        {{else}}
+            <li class="item flexrow">
+                <div class="item-name flexrow" style="opacity: 0.6; font-style: italic;">
+                    <span>Nenhuma passiva registrada</span>
+                </div>
+            </li>
+        {{/if}}
+    </ol>
+</div>

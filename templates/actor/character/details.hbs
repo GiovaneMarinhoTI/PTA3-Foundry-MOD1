@@ -1,0 +1,40 @@
+<div class="pta-tab pta-tab-content flexcol flex-gap-m">
+    <div class="flexrow flex-gap-m">
+        <div class="flexcol flex-gap-m">
+            {{systemFieldGroup system 'details.age'}}
+            {{systemFieldGroup system 'details.eyes'}}
+            {{systemFieldGroup system 'details.hair'}}
+        </div>
+        <div class="flexcol flex-gap-m">
+            {{systemFieldGroup system 'details.gender'}}
+            {{systemFieldGroup system 'details.height'}}
+            {{systemFieldGroup system 'details.weight'}}
+        </div>
+    </div>
+
+    <div class="collapsible description pta-actor-notes">
+        <div class="flexrow" data-action="collapse">
+            <a style="flex: 0;"><i class="fas fa-caret-down"></i></a>
+            <label>Description</label>
+        </div>
+        <div class="collapsible-content">
+            <div class="wrapper">
+                {{formInput @root.description.field value=@root.description.value enriched=@root.description.enriched name='system.description' toggled=true}}
+            </div>
+        </div>
+    </div>
+
+    {{#if (isGM)}}
+        <div class="collapsible description pta-actor-gm-notes">
+            <div class="flexrow" data-action="collapse">
+                <a style="flex: 0;"><i class="fas fa-caret-down"></i></a>
+                <label>GM Notes (Private)</label>
+            </div>
+            <div class="collapsible-content">
+                <div class="wrapper">
+                    {{formInput @root.gmNotes.field value=@root.gmNotes.value enriched=@root.gmNotes.enriched name='system.gmNotes' toggled=true}}
+                </div>
+            </div>
+        </div>
+    {{/if}}
+</div>

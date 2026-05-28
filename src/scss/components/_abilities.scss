@@ -1,0 +1,93 @@
+@use '../module' as util;
+
+/* || Abilities component*/
+.pta-stats {
+    flex: 1;
+    flex-wrap: nowrap;
+    display: flex;
+    flex-direction: column;
+
+    --stat-border-c: white;
+
+    @each $stat in util.$pokemon-stats {
+        [data-pta-stat=#{$stat}] {
+            --stat-border-c: var(--pta-c-stat-#{$stat}) !important;
+        }
+    }
+
+    >* {
+        margin-bottom: calc(var(--pta-scale-px));
+        flex: 1;
+    }
+
+    .pta-stat-wrap {
+        display: flex;
+        flex: 0;
+        flex-direction: row;
+        align-items: center;
+
+        .pta-score-wrap {
+            flex: 0;
+            margin-right: var(--pta-scale-px);
+        }
+
+        .pta-score {
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            flex: 0 0 50px;
+            height: 50px;
+            width: 50px;
+            overflow: hidden;
+            text-align: center;
+            border: 2px solid var(--stat-border-c);
+
+            >* {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                justify-self: center;
+                align-self: center;
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+                border-top: none;
+            }
+        }
+    }
+}
+
+.pta-skills-wrap {
+    text-align: left;
+    flex: 1;
+    margin-left: var(--pta-scale-px);
+}
+
+.pta-skill {
+    font-size: calc(var(--pta-scale-em) + 0.1em);
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    text-wrap: nowrap;
+
+    >* {
+        flex: 1;
+    }
+
+    @each $stat in util.$pokemon-stats {
+        &[data-pta-stat=#{$stat}] {
+            --stat-border-c: var(--pta-c-stat-#{$stat}) !important;
+            border-bottom: 1px solid var(--stat-border-c);
+        }
+    }
+}
+
+.pta-talent {
+    flex: 0;
+    margin-right: calc(var(--pta-scale-em));
+}
+
+.pta-mod {
+    text-align: center;
+    flex: 0 0 2em;
+}

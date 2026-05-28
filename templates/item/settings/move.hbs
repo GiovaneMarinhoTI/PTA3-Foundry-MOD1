@@ -1,0 +1,38 @@
+<div class="flexcol flex-gap-m" style="padding: 10px;">
+    <div class="flexrow flex-gap-l">
+        {{systemFieldGroup system 'type'}}
+        {{systemFieldGroup system 'category' label='Category'}}
+    </div>
+    {{systemFieldGroup system 'accuracy' label='accuracy'}}
+    {{systemFieldGroup system 'damage.formula' label='Damage Formula'}}
+    <div class="flexrow flex-gap-l">
+        {{systemFieldGroup system 'range' label='Range'}}
+        {{systemFieldGroup system 'frequency' label='Frequency'}}
+    </div>
+    {{systemFieldGroup system 'critical_chance'label='Critical Bonus'}}
+    <div>
+        <b>Effects</b>
+        {{systemFieldGroup system 'drain' label='drain'}}
+    </div>
+    <div>
+        <b>Move Uses</b>
+        <div class="flexrow flex-gap-s">
+            {{systemFieldGroup system 'uses.value' label='Remaining'}}
+            {{systemFieldGroup system 'uses.max' label='Max'}}
+        </div>
+    </div>
+    <div>
+        <b>Multi Hit</b>
+        <div class="flexrow flex-gap-s">
+            {{systemFieldGroup system 'multi_hit.min' label='Min Hits'}}
+            {{systemFieldGroup system 'multi_hit.max' label='Max Hits'}}
+        </div>
+    </div>
+    <div>
+        <b>Ailments</b>
+        <div class="flexrow flex-gap-s">
+            {{systemFieldGroup system 'ailment.type'}}
+            {{systemFieldGroup system 'ailment.chance'}}
+        </div>
+    </div>
+</div>
