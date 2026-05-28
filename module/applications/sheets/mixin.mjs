@@ -9,7 +9,7 @@ export default function PtaSheetMixin(Base) {
 
         static DEFAULT_OPTIONS = {
             classes: ['pta', 'sheet'],
-            window: { resizable: false },
+            window: { resizable: true },
             form: {
                 submitOnChange: true,
                 submitOnClose: true,
